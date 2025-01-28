@@ -7,7 +7,9 @@
 
 import Foundation
 
-public struct HttpResponse<T: Decodable> {
-    public let statusCode: Int
-    public let dto: T
+public struct HttpResponse<T: Decodable>: Responsable {
+    public typealias DTOType = T
+    
+    public var statusCode: Int
+    public var dto: DTOType
 }
