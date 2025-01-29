@@ -27,8 +27,8 @@ public final class PLRemoteDataSource: PLReadableDataSource {
             throw NetworkError.requestObjectError
         }
         
-        let data = try await networkManager.fetchData(request: request)
+        // MARK: 구현 미완
         
-        return data
+        return Data()
     }
 }
