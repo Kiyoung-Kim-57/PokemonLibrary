@@ -67,6 +67,9 @@
 			membershipExceptions = (
 				PLData/DataSourceImpl/PLRemoteDataSource.swift,
 				PLData/DataSourceInterface/PLDataSource.swift,
+				PLData/DTO/PokemonDTO.swift,
+				PLData/DTO/PokemonListDTO.swift,
+				PLData/DTO/PokemonSearchResultDTO.swift,
 				PLData/PLData.h,
 			);
 			publicHeaders = (
