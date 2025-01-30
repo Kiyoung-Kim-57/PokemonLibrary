@@ -30,6 +30,7 @@ final class NetworkTest: XCTestCase {
         let data = try await networkManager.fetchData(request: request, type: PokemonListDTO.self)
         
         XCTAssertNotNil(data)
+        XCTAssertEqual(data.dto.results.count, 30, "Result: \(data.dto.results.description)")
         
     }
     
