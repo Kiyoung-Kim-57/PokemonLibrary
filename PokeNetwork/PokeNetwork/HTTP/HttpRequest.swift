@@ -41,6 +41,12 @@ extension HttpRequest: Requestable {
     
     public func addQueryItem(_ name: String, _ value: String) -> Self {
         var request = self
+        guard request.urlComponent.queryItems != nil else {
+            request.urlComponent.queryItems = []
+            request.urlComponent.queryItems?.append(URLQueryItem(name: name, value: value))
+            return request
+        }
+        
         request.urlComponent.queryItems?.append(URLQueryItem(name: name, value: value))
         return request
     }
