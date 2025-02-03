@@ -10,7 +10,7 @@ import XCTest
 @testable import PLData
 
 final class NetworkTest: XCTestCase {
-    let networkManager: NetworkManager = NetworkManager()
+    let networkManager: NetworkManagerImpl = NetworkManagerImpl()
     
     override class func setUp() { }
     
@@ -34,6 +34,6 @@ final class NetworkTest: XCTestCase {
         
         let data = try await networkManager.fetchData(request: request, type: PokemonListDTO.self)
         
-        XCTAssertEqual(data.dto.results.count, 5, "Result: \(data.dto.results.description)")
+        XCTAssertEqual(data.response.results.count, 5, "Result: \(data.response.results.description)")
     }
 }
