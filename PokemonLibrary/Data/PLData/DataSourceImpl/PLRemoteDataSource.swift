@@ -19,13 +19,7 @@ public final class PLRemoteDataSource: PLReadableDataSource {
     }
     
     public func readData(_ condition: String) async throws -> Data {
-        guard let request = HttpRequest(
-            scheme: .https,
-            method: .GET,
-            path: ""
-        ) else {
-            throw NetworkError.requestObjectError
-        }
+        let httpRequest = HttpRequest(scheme: .https, method: .GET)
         
         // MARK: 구현 미완
         
