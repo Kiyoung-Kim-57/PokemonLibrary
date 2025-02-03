@@ -8,8 +8,8 @@
 import Foundation
 
 public protocol Responsable {
-    associatedtype DTOType: Decodable
+    associatedtype ResponseType: Decodable
     
     var statusCode: Int { get set }
-    var dto: DTOType { get set }
+    var response: ResponseType { get set }
 }
