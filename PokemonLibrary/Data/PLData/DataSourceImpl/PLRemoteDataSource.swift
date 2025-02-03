@@ -10,19 +10,22 @@ import PokeNetwork
 
 public final class PLRemoteDataSource: PLReadableDataSource {
     public typealias Item = Data
-    public typealias Condition = String
+    public typealias Condition = HttpRequest
     
-    private let networkManager: NetworkManager
+    private let networkManager: NetworkManagerImpl
+    private var baseRequest = HttpRequest(scheme: .https, method: .GET)
+        .setURLPath(path: "pokeapi.co/api/v2/pokemon")
     
-    public init(networkManager: NetworkManager) {
+    public init(networkManager: NetworkManagerImpl) {
         self.networkManager = networkManager
     }
     
-    public func readData(_ condition: String) async throws -> Data {
-        let httpRequest = HttpRequest(scheme: .https, method: .GET)
+    public func readData(
+        requestHandler: @escaping (HttpRequest) -> (HttpRequest)
+    ) async throws -> Data {
+        let request = requestHandler(baseRequest)
+        let httpResponse = try await networkManager.fetchData(request: request)
         
-        // MARK: 구현 미완
-        
-        return Data()
+        return httpResponse.response
     }
 }
