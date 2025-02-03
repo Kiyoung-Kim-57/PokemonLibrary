@@ -42,12 +42,9 @@ extension HttpRequest: Requestable {
     
     public func addQueryItem(_ name: String, _ value: String) -> Self {
         var request = self
-        guard request.urlComponent.queryItems != nil else {
+        if request.urlComponent.queryItems == nil {
             request.urlComponent.queryItems = []
-            request.urlComponent.queryItems?.append(URLQueryItem(name: name, value: value))
-            return request
         }
-        
         request.urlComponent.queryItems?.append(URLQueryItem(name: name, value: value))
         return request
     }
@@ -67,12 +64,7 @@ extension HttpRequest: Requestable {
     
     public func addHeader(key: String, value: String) -> Self {
         var request = self
-        if let _ = request.httpHeaders[key] {
-            request.httpHeaders[key] = value
-        } else {
-            request.httpHeaders.updateValue(value, forKey: key)
-        }
-        
+        request.httpHeaders[key] = value
         return request
     }
 }
