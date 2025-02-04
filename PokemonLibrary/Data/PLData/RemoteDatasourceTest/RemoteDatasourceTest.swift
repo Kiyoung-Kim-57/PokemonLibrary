@@ -31,4 +31,11 @@ final class RemoteDatasourceTest: XCTestCase {
         
         XCTAssertEqual(dto.results.count, 20, "Result: \(dto.results.description)")
     }
+    
+    func test_최대포켓몬수() async throws {
+        let data = try await remoteDatasource.readData()
+        
+        let dto: PokemonListDTO = try data.toDTO(decoder: decoder)
+        XCTAssertEqual(dto.count, 1304, "\(dto.count)")
+    }
 }
