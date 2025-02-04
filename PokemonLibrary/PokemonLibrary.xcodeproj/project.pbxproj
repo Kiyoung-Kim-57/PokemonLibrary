@@ -143,6 +143,34 @@
 			);
 			target = 6F309D8D2D52619C00EABC82 /* PLDomain */;
 		};
+		6F309F9C2D526B4400EABC82 /* Exceptions for "Domain" folder in "PokemonLibrary" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				PLDomainTests/PLDomainTests.swift,
+			);
+			target = 6F3090872D475AF800EABC82 /* PokemonLibrary */;
+		};
+		6F309F9D2D526B4400EABC82 /* Exceptions for "Domain" folder in "PLDomainTests" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				PLDomainTests/PLDomainTests.swift,
+			);
+			target = 6F309D942D52619D00EABC82 /* PLDomainTests */;
+		};
+		6F309FA12D526B5200EABC82 /* Exceptions for "Data" folder in "PokemonLibrary" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				PLData/RemoteDatasourceTest/RemoteDatasourceTest.swift,
+			);
+			target = 6F3090872D475AF800EABC82 /* PokemonLibrary */;
+		};
+		6F309FA22D526B5200EABC82 /* Exceptions for "Data" folder in "RemoteDatasourceTest" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				PLData/RemoteDatasourceTest/RemoteDatasourceTest.swift,
+			);
+			target = 6F309B952D50F77D00EABC82 /* RemoteDatasourceTest */;
+		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -157,7 +185,9 @@
 		6F3097502D4A5E5F00EABC82 /* Data */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				6F309FA12D526B5200EABC82 /* Exceptions for "Data" folder in "PokemonLibrary" target */,
 				6F30994A2D4A5F4D00EABC82 /* Exceptions for "Data" folder in "PLData" target */,
+				6F309FA22D526B5200EABC82 /* Exceptions for "Data" folder in "RemoteDatasourceTest" target */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -165,7 +195,9 @@
 		6F3097512D4A5E6300EABC82 /* Domain */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				6F309F9C2D526B4400EABC82 /* Exceptions for "Domain" folder in "PokemonLibrary" target */,
 				6F309DAD2D5261A200EABC82 /* Exceptions for "Domain" folder in "PLDomain" target */,
+				6F309F9D2D526B4400EABC82 /* Exceptions for "Domain" folder in "PLDomainTests" target */,
 			);
 			path = Domain;
 			sourceTree = "<group>";
@@ -173,16 +205,6 @@
 		6F3097522D4A5E6600EABC82 /* Presentation */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			path = Presentation;
-			sourceTree = "<group>";
-		};
-		6F309B972D50F77D00EABC82 /* RemoteDatasourceTest */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = RemoteDatasourceTest;
-			sourceTree = "<group>";
-		};
-		6F309D9B2D52619D00EABC82 /* PLDomainTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = PLDomainTests;
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -238,8 +260,6 @@
 				6F3097502D4A5E5F00EABC82 /* Data */,
 				6F3097512D4A5E6300EABC82 /* Domain */,
 				6F3097522D4A5E6600EABC82 /* Presentation */,
-				6F309B972D50F77D00EABC82 /* RemoteDatasourceTest */,
-				6F309D9B2D52619D00EABC82 /* PLDomainTests */,
 				6F3099642D4A646100EABC82 /* Frameworks */,
 				6F3090892D475AF800EABC82 /* Products */,
 			);
@@ -350,9 +370,6 @@
 				6F309B9B2D50F77D00EABC82 /* PBXTargetDependency */,
 				6F309BA22D50F78B00EABC82 /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				6F309B972D50F77D00EABC82 /* RemoteDatasourceTest */,
-			);
 			name = RemoteDatasourceTest;
 			packageProductDependencies = (
 			);
@@ -393,9 +410,6 @@
 			dependencies = (
 				6F309D982D52619D00EABC82 /* PBXTargetDependency */,
 				6F309D9A2D52619D00EABC82 /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				6F309D9B2D52619D00EABC82 /* PLDomainTests */,
 			);
 			name = PLDomainTests;
 			packageProductDependencies = (
