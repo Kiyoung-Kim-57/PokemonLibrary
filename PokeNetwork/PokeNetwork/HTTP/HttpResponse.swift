@@ -8,8 +8,8 @@
 import Foundation
 
 public struct HttpResponse<T: Decodable>: Responsable {
-    public typealias DTOType = T
+    public typealias ResponseType = T
     
     public var statusCode: Int
-    public var dto: DTOType
+    public var response: ResponseType
 }
