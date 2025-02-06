@@ -141,3 +141,43 @@ func test_add_query() async throws {
     XCTAssertEqual(data.response.results.count, 5, "Result: \(data.response.results.description)")
 }
 ```
+
+### DataSource Example
+```swift
+public final class PLRemoteDataSource: PLReadableDataSource {
+    public typealias Item = Data
+    public typealias Condition = HttpRequest
+    
+    private let networkManager: NetworkManagerImpl
+    private var baseRequest = HttpRequest(scheme: .https, method: .GET)
+        .setURLPath(path: "pokeapi.co/api/v2/pokemon")
+    
+    public init(networkManager: NetworkManagerImpl) {
+        self.networkManager = networkManager
+    }
+    
+    public func readData(
+        requestHandler: @escaping (HttpRequest) -> (HttpRequest) = { return $0 }
+    ) async throws -> Data {
+        let request = requestHandler(baseRequest)
+        let httpResponse = try await networkManager.fetchData(request: request)
+        
+        return httpResponse.response
+    }
+}
+
+//Test Code
+func test_fetchPokemons_success() async throws {
+    let data = try await remoteDatasource.readData { request in
+        let request = request
+            .addQueryItem("offset", "10")
+            .addQueryItem("limit", "20")
+        
+        return request
+    }
+    
+    let dto: PokemonListDTO = try data.toDTO(decoder: decoder)
+    
+    XCTAssertEqual(dto.results.count, 20, "Result: \(dto.results.description)")
+}
+```
