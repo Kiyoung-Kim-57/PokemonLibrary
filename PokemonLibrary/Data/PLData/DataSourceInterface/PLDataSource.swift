@@ -14,6 +14,11 @@ public protocol PLDataSource {
 
 public protocol PLReadableDataSource: PLDataSource {
     func readData(requestHandler: @escaping (Condition) -> (Condition)) async throws -> Item
+    
+    func readData<T: Decodable>(
+        requestHandler: @escaping (Condition) -> (Condition),
+        type: T.Type
+    ) async throws -> T
 }
 
 // MARK: Writable(Create & Update), Deletable(Delete)은 추후 구현 예정
