@@ -132,7 +132,9 @@
 		6F30994A2D4A5F4D00EABC82 /* Exceptions for "Data" folder in "PLData" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				PLData/DataError.swift,
 				PLData/DataSourceImpl/PLRemoteDataSource.swift,
+				PLData/DataSourceImpl/PLUserDefaultsDataSource.swift,
 				PLData/DataSourceInterface/PLDataSource.swift,
 				PLData/DTO/PokemonDTO.swift,
 				PLData/DTO/PokemonListDTO.swift,
