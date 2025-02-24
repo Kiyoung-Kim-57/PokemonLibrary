@@ -16,8 +16,8 @@ public protocol PLReadableDataSource: PLDataSource {
     func readData(requestHandler: @escaping (Condition) -> (Condition)) async throws -> Item
     
     func readData<T: Decodable>(
-        requestHandler: @escaping (Condition) -> (Condition),
-        type: T.Type
+        type: T.Type,
+        requestHandler: @escaping (Condition) -> (Condition)
     ) async throws -> T
 }
 
