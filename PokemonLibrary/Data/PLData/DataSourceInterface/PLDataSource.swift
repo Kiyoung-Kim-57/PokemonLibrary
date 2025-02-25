@@ -36,3 +36,5 @@ public protocol PLDeletableDataSource: PLDataSource {
         requestHandler: @escaping (Condition) -> (Condition)
     ) async throws -> Bool
 }
+
+public typealias PLDataSourceProtocol = PLReadableDataSource & PLWritableDataSource & PLDeletableDataSource
