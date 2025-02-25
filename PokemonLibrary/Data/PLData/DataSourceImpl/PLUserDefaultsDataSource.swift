@@ -18,13 +18,18 @@ final class PLUserDefaultsDataSource: PLReadableDataSource {
     func readData(requestHandler: @escaping (String) -> (String)) async throws -> Data {
         let key = requestHandler(defaultKey)
         guard let data = standard.object(forKey: key) as? Data else { throw DataError.notFound }
-        return Data()
+        
+        return data
     }
     
-    func readData<T>(type: T.Type, requestHandler: @escaping (String) -> (String)) async throws -> T where T : Decodable {
+    func readData<T: Decodable>(
+        type: T.Type,
+        requestHandler: @escaping (String) -> (String)
+    ) async throws -> T {
         let key = requestHandler(defaultKey)
         guard let data = standard.object(forKey: key) as? Data else { throw DataError.notFound }
         let decoded = try decoder.decode(T.self, from: data)
+        
         return decoded
     }
 }
