@@ -19,7 +19,7 @@ final class RemoteDatasourceTest: XCTestCase {
     override class func tearDown() { }
     
     func test_fetchPokemons_success() async throws {
-        let dto = try await remoteDatasource.readData(type: PokemonListDTO.self) { request in
+        let dto = try await remoteDatasource.readData(type: PokemonSearchListDTO.self) { request in
             let request = request
                 .addQueryItem("offset", "10")
                 .addQueryItem("limit", "20")
@@ -33,7 +33,7 @@ final class RemoteDatasourceTest: XCTestCase {
     func test_최대포켓몬수() async throws {
         let data = try await remoteDatasource.readData()
         
-        let dto: PokemonListDTO = try data.toDTO(decoder: decoder)
+        let dto: PokemonSearchListDTO = try data.toDTO(decoder: decoder)
         XCTAssertEqual(dto.count, 1304, "\(dto.count)")
     }
 }

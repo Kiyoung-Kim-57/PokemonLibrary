@@ -7,7 +7,7 @@
 
 import Foundation
 
-public struct PokemonListDTO: Decodable {
+public struct PokemonSearchListDTO: Decodable {
     public let count: Int
     public let next: String?
     public let previous: String?
