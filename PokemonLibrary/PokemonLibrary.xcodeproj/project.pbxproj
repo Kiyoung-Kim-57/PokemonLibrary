@@ -188,12 +188,19 @@
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				PLPresentation/PLPresentation.h,
-				PLPresentation/ViewController/StartViewController.swift,
+				PLPresentation/ViewController/MainTabBarController.swift,
 			);
 			publicHeaders = (
 				PLPresentation/PLPresentation.h,
 			);
 			target = 6F439D2F2D5C868400B367ED /* PLPresentation */;
+		};
+		6F88E28B2D70400A00D28FAC /* Exceptions for "Presentation" folder in "PLData" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				PLPresentation/ViewController/MainTabBarController.swift,
+			);
+			target = 6F3099392D4A5F4500EABC82 /* PLData */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
@@ -229,6 +236,7 @@
 		6F3097522D4A5E6600EABC82 /* Presentation */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
+				6F88E28B2D70400A00D28FAC /* Exceptions for "Presentation" folder in "PLData" target */,
 				6F439D3F2D5C868800B367ED /* Exceptions for "Presentation" folder in "PLPresentation" target */,
 			);
 			path = Presentation;
