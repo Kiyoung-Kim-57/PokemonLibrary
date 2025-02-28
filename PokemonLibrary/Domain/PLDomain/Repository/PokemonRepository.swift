@@ -9,5 +9,5 @@ import Foundation
 
 public protocol PokemonRepository {
     // TODO: 필요 메서드 생성
-    func fetchPokemons(offset: Int, limit: Int) async throws -> PokemonListDTO
+    func fetchPokemons(offset: Int, limit: Int) async throws -> PokemonSearchListDTO
 }
