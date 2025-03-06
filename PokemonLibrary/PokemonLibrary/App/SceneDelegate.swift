@@ -18,22 +18,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         
         let startViewController = HomeViewController()
-        let tempViewController = UIViewController()
         let mainTabBarController = MainTabBarController(viewControllers: [
             startViewController,
-            tempViewController
+            UIViewController()
         ])
         
         mainTabBarController.setTabBarItem(at: 0) { item in
-            item.image = UIImage(systemName: "person.circle")
-            item.selectedImage = UIImage(systemName: "person.circle.fill")
+            item.image = UIImage(systemName: "house")
+            item.selectedImage = UIImage(systemName: "house.fill")
             item.title = "Home"
         }
         
         mainTabBarController.setTabBarItem(at: 1) { item in
-            item.image = UIImage(systemName: "plus")
-            item.selectedImage = UIImage(systemName: "plus.fill")
-            item.title = "Add"
+            item.image = UIImage(systemName: "person.circle")
+            item.selectedImage = UIImage(systemName: "person.circle.fill")
+            item.title = "Profile"
         }
         
         window = UIWindow(windowScene: windowScene)

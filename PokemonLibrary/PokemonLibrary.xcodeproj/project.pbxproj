@@ -198,6 +198,8 @@
 		6F88E28B2D70400A00D28FAC /* Exceptions for "Presentation" folder in "PLData" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
+				"PLPresentation/Util/Util+CollectionView/GridStyle.swift",
+				"PLPresentation/Util/Util+CollectionView/LayoutType.swift",
 				PLPresentation/ViewController/MainTabBarController.swift,
 			);
 			target = 6F3099392D4A5F4500EABC82 /* PLData */;
