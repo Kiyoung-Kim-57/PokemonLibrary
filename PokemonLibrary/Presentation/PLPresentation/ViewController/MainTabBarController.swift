@@ -20,7 +20,7 @@ final class MainTabBarController: UITabBarController {
     
     public func setTabBarItem(
         at index: Int,
-        itemHandler: @escaping (UITabBarItem) -> ()
+        itemHandler: (UITabBarItem) -> ()
     ) {
         guard let items = tabBar.items, index < items.count, index >= 0 else { return }
         
