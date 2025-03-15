@@ -1,15 +1,8 @@
-//
-//  NetworkTest.swift
-//  NetworkTest
-//
-//  Created by 김기영 on 1/30/25.
-//
-
 import XCTest
 @testable import PokeNetwork
 @testable import PLData
 
-final class NetworkTest: XCTestCase {
+final class PokeNetworkTests: XCTestCase {
     let networkManager: NetworkManagerImpl = NetworkManagerImpl()
     
     override class func setUp() { }

@@ -9,5 +9,5 @@ import Foundation
 
 public protocol RandomPokemonUseCase {
     // TODO: RxSwift로 데이터 스트림 연결하기
-    func execute() async throws -> PokemonListDTO
+    func execute() async throws -> PokemonSearchListDTO
 }

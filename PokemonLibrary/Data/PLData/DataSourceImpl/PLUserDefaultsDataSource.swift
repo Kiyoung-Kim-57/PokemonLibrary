@@ -17,7 +17,7 @@ final class PLUserDefaultsDataSource: PLDataSourceProtocol {
     
     /// ReqeustHandler는 UserDefaults의 Key를 탈출 클로저로 따로 수정할 수 있게 합니다
     func readData(
-        requestHandler: @escaping (String) -> (String) = { return $0 }
+        requestHandler: (String) -> (String) = { return $0 }
     ) async throws -> Data {
         let key = requestHandler(defaultKey)
         
@@ -32,7 +32,7 @@ final class PLUserDefaultsDataSource: PLDataSourceProtocol {
     
     func readData<T: Decodable>(
         type: T.Type,
-        requestHandler: @escaping (String) -> (String) = { return $0 }
+        requestHandler: (String) -> (String) = { return $0 }
     ) async throws -> T {
         let key = requestHandler(defaultKey)
         
@@ -48,7 +48,7 @@ final class PLUserDefaultsDataSource: PLDataSourceProtocol {
     
     func writeData(
         _ item: Data,
-        requestHandler: @escaping (String) -> (String) = { return $0 }
+        requestHandler: (String) -> (String) = { return $0 }
     ) async throws -> Bool {
         let key = requestHandler(defaultKey)
         
@@ -59,7 +59,7 @@ final class PLUserDefaultsDataSource: PLDataSourceProtocol {
     }
     
     func deleteData(
-        requestHandler: @escaping (String) -> (String) = { return $0 }
+        requestHandler: (String) -> (String) = { return $0 }
     ) async throws -> Bool {
         let key = requestHandler(defaultKey)
         

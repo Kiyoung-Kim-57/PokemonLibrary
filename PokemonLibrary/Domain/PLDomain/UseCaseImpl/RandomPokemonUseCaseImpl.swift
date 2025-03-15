@@ -14,7 +14,7 @@ public final class RandomPokemonUseCaseImpl: RandomPokemonUseCase {
         self.repository = repository
     }
     
-    public func execute() async throws -> PokemonListDTO {
+    public func execute() async throws -> PokemonSearchListDTO {
         let randomOffset = Int.random(in: 0...1294)
         return try await repository.fetchPokemons(offset: randomOffset, limit: 10)
     }

@@ -13,11 +13,11 @@ public protocol PLDataSource {
 }
 
 public protocol PLReadableDataSource: PLDataSource {
-    func readData(requestHandler: @escaping (Condition) -> (Condition)) async throws -> Item
+    func readData(requestHandler: (Condition) -> (Condition)) async throws -> Item
     
     func readData<T: Decodable>(
         type: T.Type,
-        requestHandler: @escaping (Condition) -> (Condition)
+        requestHandler: (Condition) -> (Condition)
     ) async throws -> T
 }
 
@@ -26,14 +26,14 @@ public protocol PLWritableDataSource: PLDataSource {
     @discardableResult
     func writeData(
         _ item: Item,
-        requestHandler: @escaping (Condition) -> (Condition)
+        requestHandler: (Condition) -> (Condition)
     ) async throws -> Bool
 }
 
 public protocol PLDeletableDataSource: PLDataSource {
     @discardableResult
     func deleteData(
-        requestHandler: @escaping (Condition) -> (Condition)
+        requestHandler: (Condition) -> (Condition)
     ) async throws -> Bool
 }
 
