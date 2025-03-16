@@ -157,7 +157,7 @@ public final class PLRemoteDataSource: PLReadableDataSource {
     }
     
     public func readData(
-        requestHandler: @escaping (HttpRequest) -> (HttpRequest) = { return $0 }
+        requestHandler: (HttpRequest) -> (HttpRequest) = { return $0 }
     ) async throws -> Data {
         let request = requestHandler(baseRequest)
         let httpResponse = try await networkManager.fetchData(request: request)
