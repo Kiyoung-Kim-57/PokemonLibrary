@@ -12,6 +12,7 @@ public enum HttpMethods: String {
 ```
 ## Request
 ### HttpRequest
+> 함수형 프로그래밍의 불변성을 적용하여 체이닝 방식으로 Request를 정의할 수 있도록 구현
 ```swift
 public struct HttpRequest {
     private let scheme: Schemes
@@ -76,6 +77,7 @@ extension HttpRequest: Requestable {
 
 ```
 ### Example
+> 체이닝 방식으로 가독성 향상
 ```swift
 let request = HttpRequest(scheme: .https, method: .GET)
             .setURLPath(path: "\(path)")
@@ -85,6 +87,7 @@ let request = HttpRequest(scheme: .https, method: .GET)
 
 ## Response
 ### HttpResponse
+> 제너릭 타입을 이용해 디코딩된 데이터 타입또는 원본 데이터를 상태 코드와 함께 묶어서 사용 
 ```swift
 public struct HttpResponse<T: Decodable>: Responsable {
     public typealias ResponseType = T
@@ -95,6 +98,7 @@ public struct HttpResponse<T: Decodable>: Responsable {
 ```
 # Network Manager
 ## Protocol
+> 메서드 오버로딩으로 리턴 타입에 원본 데이터를 포함하는 것과 디코딩 타입을 포함하는 것을 구분
 ```swift
 public protocol NetworkManager {
     //Fetch Data & Decoding
@@ -143,6 +147,7 @@ func test_add_query() async throws {
 ```
 
 ### DataSource Example
+> RequestHandler를 이용해 선언형 스타일을 적용해 구현한 DataSource 구현 예시
 ```swift
 public final class PLRemoteDataSource: PLReadableDataSource {
     public typealias Item = Data
