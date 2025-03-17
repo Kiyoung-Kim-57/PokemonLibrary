@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		6F622B102D81DBA3003BD436 /* PokeNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F3090E12D47627500EABC82 /* PokeNetwork.framework */; };
+		6F6231EC2D87BF5E003BD436 /* PLData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6231EB2D87BF5E003BD436 /* PLData.framework */; };
+		6F6231ED2D87BF5E003BD436 /* PLData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6231EB2D87BF5E003BD436 /* PLData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -20,15 +22,33 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		6F6231EE2D87BF5E003BD436 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				6F6231ED2D87BF5E003BD436 /* PLData.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		6F3090E12D47627500EABC82 /* PokeNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PokeNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F30998F2D4BC70800EABC82 /* PLData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PLData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F622B0C2D81DBA2003BD436 /* PokeNetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PokeNetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F6231EB2D87BF5E003BD436 /* PLData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = PLData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
 		6F3090E82D47627500EABC82 /* Exceptions for "PokeNetwork" folder in "PokeNetwork" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Resource/Info.plist,
+			);
 			publicHeaders = (
 				PokeNetwork.h,
 			);
@@ -64,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6F6231EC2D87BF5E003BD436 /* PLData.framework in Frameworks */,
 				6F622B102D81DBA3003BD436 /* PokeNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -93,6 +114,7 @@
 		6F30998E2D4BC70800EABC82 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				6F6231EB2D87BF5E003BD436 /* PLData.framework */,
 				6F30998F2D4BC70800EABC82 /* PLData.framework */,
 			);
 			name = Frameworks;
@@ -141,6 +163,7 @@
 				6F622B082D81DBA2003BD436 /* Sources */,
 				6F622B092D81DBA2003BD436 /* Frameworks */,
 				6F622B0A2D81DBA2003BD436 /* Resources */,
+				6F6231EE2D87BF5E003BD436 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,6 +274,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PokeNetwork/Resource/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -285,6 +309,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				ENABLE_MODULE_VERIFIER = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PokeNetwork/Resource/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
@@ -308,6 +333,8 @@
 		};
 		6F3090EC2D47627500EABC82 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReferenceAnchor = 6F3090E32D47627500EABC82 /* PokeNetwork */;
+			baseConfigurationReferenceRelativePath = Secrets.xcconfig;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
@@ -438,6 +465,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S68RW89WQA;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.black-rubber.PokeNetworkTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -454,6 +482,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = S68RW89WQA;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "";
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.black-rubber.PokeNetworkTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

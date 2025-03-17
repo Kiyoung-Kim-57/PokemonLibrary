@@ -29,4 +29,24 @@ final class PokeNetworkTests: XCTestCase {
         
         XCTAssertEqual(data.response.results.count, 5, "Result: \(data.response.results.description)")
     }
+    
+    func test_Weather() async throws {
+        let bundle = Bundle(for: NetworkManagerImpl.self)
+        guard let weatherKey = bundle.object(forInfoDictionaryKey: "WeatherKey") as? String else {
+            XCTFail()
+            return
+        }
+        
+        let request = HttpRequest(scheme: .https, method: .GET)
+            .setURLPath(path: "api.openweathermap.org/data/2.5/forecast")
+            .addQueryItem("q", "BUSAN")
+            .addQueryItem("appid", weatherKey)
+            .addQueryItem("units", "metric")
+        
+        if let data = try? await networkManager.fetchData(request: request, type: WeatherForecast.self) {
+            XCTAssertNotNil(data.response)
+        } else {
+            XCTFail()
+        }
+    }
 }
